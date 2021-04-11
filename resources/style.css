@@ -8,7 +8,7 @@ html {
 
 main {
     display: grid;
-    grid-template-rows: 2fr 2fr 3fr 0.1fr 2fr;
+    grid-template-rows: 600px 2fr 3fr 0.1fr 2fr;
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas:    "cta cta cta ctaText ctaText"
                             "highlight highlight highlight highlightAside highlightAside"
@@ -51,7 +51,7 @@ a {
 #cta {
     grid-area: cta;
     background-color: gray;
-    max-height: 700px;
+    max-height: 600px;
 }
 
 #ctaText {
@@ -60,8 +60,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    max-height: 700px;
+    max-height: 600px;
 }
 
 #ctaText button {
@@ -85,6 +84,7 @@ a {
 
 #cta img {
     max-width: 100%;
+    max-height: 100%;
     padding: 32px 24px;
 }
 
@@ -99,7 +99,7 @@ a {
 
 #highlight {
     grid-area: highlight;
-    max-height: 700px;
+    max-height: 750px;
     padding: 24px;
 }
 
@@ -121,7 +121,7 @@ a {
     grid-template-areas:    "aside1 asideText1"
                             "aside2 asideText2"
                             "aside3 asideText3";
-    max-height:  700px;
+    max-height:  750px;
     border-left: 1px solid gray;
 }
 
@@ -224,6 +224,69 @@ footer {
     margin-top: auto;
 }
 
+@media only screen and (max-width: 480px) {
+    main {
+        display: grid;
+        grid-template-rows: 600px 729px 713px 50px 265px;
+        grid-template-columns: 100%;
+        grid-template-areas:    "cta"
+                                "highlights"
+                                "learning"
+                                "thesisHeader"
+                                "thesis"
+                                ;
+    }
 
 
+    #cta {
+        grid-area: cta;
+    }
 
+    #ctaText {
+        grid-area: cta;
+    }
+
+    #highlight {
+        display: none;
+    }
+
+    #highlightAside {
+        grid-area: highlights;
+    }
+
+    #learning {
+        grid-area: learning;
+        display: block;
+    }
+
+    #learning img, #learning p {
+        display: none;
+    }
+
+    .courses {
+        display:block;
+        margin: 8px;
+        padding: 16px;
+        background-color: cadetblue;
+    }
+
+    #thesisHeader {
+        grid-area: thesisHeader;
+    }
+
+    #thesis {
+        grid-area: thesis;
+    }
+
+    #thesisAside {
+        display: none;
+    }
+
+    #thesis cite, #thesis h2 {
+        display: none;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
