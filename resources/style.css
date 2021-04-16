@@ -6,9 +6,13 @@ html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body {
+    margin: 0;
+}
+
 main {
     display: grid;
-    grid-template-rows: 600px 2fr 3fr 0.1fr 2fr;
+    grid-template-rows: 0.75fr 1fr 1.3fr 0.05fr 0.9fr;
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas:    "cta cta cta ctaText ctaText"
                             "highlight highlight highlight highlightAside highlightAside"
@@ -18,16 +22,13 @@ main {
 }
 
 header {
-    margin: 0 24px;
     display: flex;
     align-items: center;
     height: 64px;
+    background-color: #1750B3;
+    border-bottom: 1px solid white;
 }
 
-header h1 {
-    display: inline-block;
-    font-size: 32px;
-}
 
 nav {
     text-align: right;
@@ -37,7 +38,7 @@ nav {
 header li {
     display: inline-flex;
     margin-left: 16px;
-    color: black;
+    color: white;
 }
 
 a {
@@ -54,13 +55,14 @@ a {
 
 #cta {
     grid-area: cta;
-    background-color: gray;
+    background-color: #6595EA;
     max-height: 600px;
 }
 
 #ctaText {
     grid-area: ctaText;
-    background-color: gray;
+    background-color: #6595EA;
+    color: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -69,21 +71,39 @@ a {
 
 #ctaText button {
     color: white;
-    background-color: darkslategrey;
+    background-color: #DB9A11;
     text-align: center;
     font-size: 1.5rem;
     padding: 8px;
     width: 80%;
+    border-radius: 20px;
+}
+
+#ctaText button:hover {
+    background-color: hsla(31, 86%, 46%, 1);
+    font-size: 1.6rem;
+    cursor: pointer;
 }
 
 #ctaText h1 {
-    font-size: 200%;
+    font-size: 350%;
 }
 
-#ctaText h1, h2 {
+#ctaText p {
     margin-top: 0px;
     margin-bottom: 0px;
     width: 80%;
+}
+
+#ctaText h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width:90%;
+}
+
+#ctaText p {
+    font-size: 150%;
+    line-height: 1.5;
 }
 
 #cta img {
@@ -95,10 +115,11 @@ a {
 #highlight img, #thesis video {
     max-width: 95%;
     padding: 32px 0;
+    margin-bottom: 24px;
 }
 
 #academy {
-    color:grey;
+    color:#7cacff;
 }
 
 #highlight {
@@ -107,14 +128,24 @@ a {
     padding: 24px;
 }
 
-#highlight h2 {
+h2 {
     font-size: 2rem;
     padding-bottom: 24px;
+    color: #2C4166;
 }
 
 #highlight cite {
     display: inline-block;
-    max-width: 95%;
+    max-width: 50%;
+    line-height: 1.5;
+    max-width: 50%;
+    line-height: 2.0;
+    vertical-align: middle;
+}
+
+#highlight p {
+    color: slategrey;
+    display: inline-block;
 }
 
 #highlightAside {
@@ -126,7 +157,7 @@ a {
                             "aside2 asideText2"
                             "aside3 asideText3";
     max-height:  750px;
-    border-left: 1px solid gray;
+    border-left: 1px solid #2C4166;
 }
 
 #highlightAside img, #thesisAside img {
@@ -153,7 +184,7 @@ a {
                             "course1 course2 course3"
                             "course4 course5 course6";
     max-height:  1000px;
-    background-color: gray;
+    background-color: #6595EA;
     grid-gap: 24px;
     padding: 72px;
     overflow: hidden;
@@ -181,7 +212,7 @@ a {
 
 #thesis {
     grid-area: thesis;
-    max-height: 700px;
+    max-height: 800px;
     padding: 24px;
     border-bottom: 1px solid grey;
 }
@@ -194,9 +225,9 @@ a {
     grid-template-areas:    "tAside1 tAsideText1"
                             "tAside2 tAsideText2"
                             "tAside3 tAsideText3";
-    max-height:  700px;
-    border-left: 1px solid gray;
-    border-bottom: 1px solid grey;
+    max-height:  800px;
+    border-left: 1px solid #2C4166;
+    border-bottom: 1px solid #2C4166;
 }
 
 #thesisHeader {
@@ -212,6 +243,13 @@ footer {
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
     grid-template-areas: "copyright link1 link2"; 
+    background-color: #0e4db9;
+    color: white;
+    padding: 8px 16px;
+}
+
+footer a {
+    color: white;
 }
 
 #terms {
@@ -228,6 +266,12 @@ footer {
     margin-top: auto;
 }
 
+#signUp {
+    border-radius: 25px;
+    background-color: #DB9A11;
+    padding: 10px;
+}
+
 @media only screen and (max-width: 480px) {
     main {
         display: grid;
@@ -241,6 +285,18 @@ footer {
                                 "thesis";
     }
 
+    a, a:visited, a:hover, a:active {
+        color: inherit;
+      }
+
+    #mobileNav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5%;
+    }
+
     .desktop {
         display: none;
     }
@@ -251,8 +307,13 @@ footer {
         margin: 16px;
     }
 
+    .asideImg {
+        display: block;
+    }
+
     .asideText {
         margin:  0 32px;
+        display: block;
     }
 
     #cta {
@@ -278,10 +339,14 @@ footer {
         font-size: 170%;
     }
 
-    #ctaText h1, #ctaText h2 {
+    #ctaText h1, #ctaText p {
         width:90%;
         margin-left: 16px;
         margin-right: 16px;
+    }
+
+    #ctaText p {
+        font-size: 150%;
     }
 
     #highlight {
@@ -299,35 +364,11 @@ footer {
     }
 
     #highlightAside img {
-        width: 100%;
+        width: 90%;
     }
 
     #learning, #thesisHeader {
         padding: 32px 16px;
-    }
-
-    #aside1 {
-        grid-row: 1 / span 1;
-    }
-
-    #asideText1 {
-        grid-row: 2 / span 1;
-    }
-
-    #aside2 {
-        grid-row: 3 / span 1;
-    }
-
-    #asideText2 {
-        grid-row: 4 / span 1;
-    }
-
-    #aside3 {
-        grid-row: 5 / span 1;
-    }
-
-    #asideText3 {
-        grid-row: 6 / span 1;
     }
 
     #learning {

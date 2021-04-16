@@ -5,21 +5,30 @@
             Colmar Academy
         </title>
         <link href="resources/style.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
     </head>
     <body>
         <header>
             <img id="logo" src="resources/images/ic-logo.svg" />
-            <h1>COLMAR</h1><h1 id="academy">ACADEMY</h1>
-            <nav>
+            <h1 class="desktop">COLMAR</h1><h1 class="desktop" id="academy">ACADEMY</h1>
+            <nav class="desktop">
                 <ul>
                     <a href="#"><li>On campus</li></a>
                     <a href="#"><li>Online</li></a>
                     <a href="#"><li>For companies</li></a>
-                    <a href="#"><li>Sign up</li></a>
-                <ul>
-            <nav>
+                    <a href="#"><li id="signUp">Sign up</li></a>
+                </ul>
+            </nav>
+            <nav class="mobile">
+                <ul id="mobileNav">
+                    <a href="#"><i class="fa fa-university fa-2x" title="On Campus"></i></a>
+                    <a href="#"><i class="fa fa-laptop fa-2x" title="Online"></i></a>
+                    <a href="#"><i class="fa fa-building fa-2x" title="For companies"></i></a>
+                    <a href="#"><i class="fa fa-user-plus fa-2x" title="Sign up"></i></a>
+                </ul>
+            </nav>
         </header>
         <main>
             <section id="cta">
@@ -27,17 +36,16 @@
             </section>
             <section id="ctaText">
                 <h1>Learn something new every day</h1>
-                <h2>Nine correctly spelt important words go in this sentence</h2>
+                <p>From accounting to zoology - what interests you?</p>
                 <button>Start here</button>
             </section>
             <section id="highlight">
                 <img src="resources/images/information-main.jpg" />
-                <h2>It doesn't hurt to keep practicing</h2>
-                <cite>A mighty aragraph of very important words, phrases and sentences, 
+                <cite>A mighty paragraph of very important words, phrases and sentences, 
                     which when taken together as a whole really serve to open one's eyes
                     to the immensity of the known universe and the myriad possibilities 
                     that await each and every one of us.</cite>
-                <p>Emanuel, Senior Strategist at Hiring.com</hiring></p>
+                <p>Emanuel, Senior Strategist at Hiring.com</p>
             </section>
             <section id="highlightAside">
                 <section class="asideImg" id="aside1">
