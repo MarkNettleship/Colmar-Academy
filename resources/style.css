@@ -3,7 +3,9 @@
 }
 
 html {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Karla, Geneva, Tahoma, sans-serif;
+    font-size: calc(12px + 1vmin);
+    background-color: whitesmoke;
 }
 
 body {
@@ -12,7 +14,7 @@ body {
 
 main {
     display: grid;
-    grid-template-rows: 0.75fr 1fr 1.3fr 0.05fr 0.9fr;
+    grid-template-rows: 0.75fr 1fr 1.3fr 100px 0.9fr;
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas:    "cta cta cta ctaText ctaText"
                             "highlight highlight highlight highlightAside highlightAside"
@@ -33,6 +35,7 @@ header {
 nav {
     text-align: right;
     flex: auto;
+    margin: 0 16px;
 }
 
 header li {
@@ -51,21 +54,24 @@ a {
 
 #logo {
     height: inherit;
+    margin-left:  16px;
 }
 
 #cta {
     grid-area: cta;
-    background-color: #6595EA;
+    background-color: #8EB1EE;
     max-height: 600px;
+    display: flex;
+    justify-content: center;
 }
 
 #ctaText {
     grid-area: ctaText;
-    background-color: #6595EA;
+    background-color: #8EB1EE;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     max-height: 600px;
 }
 
@@ -77,22 +83,31 @@ a {
     padding: 8px;
     width: 80%;
     border-radius: 20px;
+    margin: 0 auto;
 }
 
-#ctaText button:hover {
+#ctaText button:hover, #signUp:hover {
     background-color: hsla(31, 86%, 46%, 1);
-    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+#ctaText button:active, #signUp:active {
+    background-color: hsla(39, 86%, 36%, 1);
+    color: rgba(255, 255, 255, 0.918);
     cursor: pointer;
 }
 
 #ctaText h1 {
     font-size: 350%;
+    font-family: spectral;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #ctaText p {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 0 auto;
     width: 80%;
+    text-align: center;
 }
 
 #ctaText h1 {
@@ -110,12 +125,21 @@ a {
     max-width: 100%;
     max-height: 100%;
     padding: 32px 24px;
+    object-fit: cover;
 }
 
-#highlight img, #thesis video {
+#highlight img {
     max-width: 95%;
     padding: 32px 0;
     margin-bottom: 24px;
+    object-fit: cover;
+}
+
+#thesis video {
+    max-width: 95%;
+    margin-bottom: 24px;
+    margin-top: -24px;
+    object-fit: cover;
 }
 
 #academy {
@@ -137,15 +161,18 @@ h2 {
 #highlight cite {
     display: inline-block;
     max-width: 50%;
-    line-height: 1.5;
-    max-width: 50%;
     line-height: 2.0;
     vertical-align: middle;
+    margin-left: 15px;
+    text-indent: 16px;
 }
 
 #highlight p {
     color: slategrey;
     display: inline-block;
+    margin-left: 45px;
+    line-height: 2;
+    text-align: center;
 }
 
 #highlightAside {
@@ -157,7 +184,7 @@ h2 {
                             "aside2 asideText2"
                             "aside3 asideText3";
     max-height:  750px;
-    border-left: 1px solid #2C4166;
+    border-left: 1px solid #8EB1EE;
 }
 
 #highlightAside img, #thesisAside img {
@@ -168,11 +195,14 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid #8EB1EE;
 }
 
 .asideText, .tAsideText {
-    display: block;
-    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #8EB1EE;
 }
 
 #learning {
@@ -186,7 +216,7 @@ h2 {
     max-height:  1000px;
     background-color: #6595EA;
     grid-gap: 24px;
-    padding: 72px;
+    padding: 0px 72px 36px 72px;
     overflow: hidden;
 }
 
@@ -195,6 +225,7 @@ h2 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 16px;
 }
 
 #learning img {
@@ -214,6 +245,7 @@ h2 {
     grid-area: thesis;
     max-height: 800px;
     padding: 24px;
+    text-align: center;
     border-bottom: 1px solid grey;
 }
 
@@ -226,17 +258,61 @@ h2 {
                             "tAside2 tAsideText2"
                             "tAside3 tAsideText3";
     max-height:  800px;
-    border-left: 1px solid #2C4166;
-    border-bottom: 1px solid #2C4166;
+    border-left: 1px solid #8EB1EE;;
 }
 
 #thesisHeader {
     grid-area: thesisHeader;
 }
 
+#pContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+#thesisCols {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.thesisText {
+    padding: 16px;
+    line-height: 1.7;
+}
+
 #thesisHeader h2 {
     width: 100%;
     text-align: center;
+    font-size: 2rem;
+    padding-top: 24px;
+    color: #2C4166;
+    margin: 0 auto;
+}
+
+#tAside1, #tAsideText1 {
+    border-top: 1px solid #8EB1EE;
+}
+
+#pHeader h2 {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.asideText a, .tAsideText a {
+    color:blue;
+    text-decoration: underline;
+}
+
+.asideText a:visited, .tAsideText a:visited {
+    color:purple;
+}
+
+.asideText a:active, .tAsideText a:active {
+    color:red;
 }
 
 footer {
@@ -267,12 +343,16 @@ footer a {
 }
 
 #signUp {
-    border-radius: 25px;
+    border-radius: 20px;
     background-color: #DB9A11;
     padding: 10px;
 }
 
 @media only screen and (max-width: 480px) {
+    html {
+        font-size: 3.75vmin;
+    }
+
     main {
         display: grid;
         grid-template-rows: 15% 15% 28% 18% 5% 18%;
@@ -294,7 +374,6 @@ footer a {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-left: 5%;
     }
 
     .desktop {
@@ -402,7 +481,7 @@ footer a {
         display: none;
     }
 
-    #thesis cite, #thesis h2 {
+    #pContainer p, #thesis h2 {
         display: none;
     }
 

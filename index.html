@@ -6,12 +6,13 @@
         </title>
         <link href="resources/style.css" type="text/css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;1,300;1,400&family=Spectral:wght@300;400&display=swap" rel="stylesheet"> 
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
     </head>
     <body>
         <header>
-            <img id="logo" src="resources/images/ic-logo.svg" />
+            <img id="logo" class="desktop" src="resources/images/ic-logo.svg" />
             <h1 class="desktop">COLMAR</h1><h1 class="desktop" id="academy">ACADEMY</h1>
             <nav class="desktop">
                 <ul>
@@ -23,16 +24,17 @@
             </nav>
             <nav class="mobile">
                 <ul id="mobileNav">
-                    <a href="#"><i class="fa fa-university fa-2x" title="On Campus"></i></a>
-                    <a href="#"><i class="fa fa-laptop fa-2x" title="Online"></i></a>
-                    <a href="#"><i class="fa fa-building fa-2x" title="For companies"></i></a>
-                    <a href="#"><i class="fa fa-user-plus fa-2x" title="Sign up"></i></a>
+                    <li><img src="resources/images/ic-logo.svg" /></li>
+                    <a href="#"><li><i class="fa fa-university fa-lg" title="On Campus"></i></li></a>
+                    <a href="#"><li><i class="fa fa-laptop fa-lg" title="Online"></i></li></a>
+                    <a href="#"><li><i class="fa fa-building fa-lg" title="For companies"></i></li></a>
+                    <a href="#"><li><i class="fa fa-user-plus fa-lg" title="Sign up"></i></li></a>
                 </ul>
             </nav>
         </header>
         <main>
             <section id="cta">
-                <img src="resources/images/banner.jpg" />
+                <img src="resources/images/banner_cropped.jpg" />
             </section>
             <section id="ctaText">
                 <h1>Learn something new every day</h1>
@@ -41,11 +43,11 @@
             </section>
             <section id="highlight">
                 <img src="resources/images/information-main.jpg" />
-                <cite>A mighty paragraph of very important words, phrases and sentences, 
+                <cite>"A mighty paragraph of very important words, phrases and sentences, 
                     which when taken together as a whole really serve to open one's eyes
                     to the immensity of the known universe and the myriad possibilities 
-                    that await each and every one of us.</cite>
-                <p>Emanuel, Senior Strategist at Hiring.com</p>
+                    that await each and every one of us."</cite>
+                <p>Emanuel Anders <br>Senior Strategist - Hiring.com</p>
             </section>
             <section id="highlightAside">
                 <section class="asideImg" id="aside1">
@@ -123,12 +125,14 @@
                     <source src="resources/videos/thesis.mp4">
                     This video is not supported in your browser.
                 </Video>
-                <h2>Reimagine urban</h2>
-                <cite>Our latest colleciton focuses on the work of our recent graduates, who worked really hard to create this weird, blocky building.
-                    The main point of this building is that it is made purely of gases. The airflow is constructed in such a way as to encourage gases
-                    to build up in more dense patterns where walls are required. The walls block all wind and cold from outside, but can be walked through
-                    from inside to outside, making the doors strictly decorative.
-                </cite>
+                <div id="pContainer">
+                    <div id="pHeader"><h2>Reimagine urban</h2></div>
+                    <div id="thesisCols"><div><p class="thesisText">Our latest colleciton focuses on the work of our recent graduates, who worked really hard to create this weird, blocky building.
+                        The main point of this building is that it is made purely of gases. The airflow is constructed in such a way </p></div><div><p class="thesisText">as to encourage gases
+                        to build up in more dense patterns where walls are required. The walls block all wind and cold from outside, but can be walked through
+                        from inside to outside, making the doors strictly decorative.</p></div>
+                    </div>
+                </div>
             </section>
             <section id="thesisAside">
                 <section class="tAsideImg" id="tAside1">
